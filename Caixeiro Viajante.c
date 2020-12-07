@@ -9,6 +9,7 @@ int MatrizCidades(int c)
  int menor = 10000, tp;
  for(ct = 0; ct < cid; ct++)
  {
+ 
  if((cidades[c][ct] != 0) && (cidVisitada[ct] == 0))
  {
  if(cidades[c][ct] < menor)
@@ -23,6 +24,7 @@ int MatrizCidades(int c)
  {
  custo = custo + tp;
  }
+ 
  return cid_aprox;
 }
 
@@ -39,12 +41,14 @@ CustoMenor(int cid)
  custo = custo + cidades[cid][cid_aprox];
  return;
  }
- CustoMenor(cid_aprox);
+CustoMenor(cid_aprox);
 }
 
 int main()
 { 
  int i, j;
+ 
+
  
  printf("\nPercorrendo as Cidades\n");
  for(i = 0; i < cid; i++)
@@ -68,6 +72,6 @@ int main()
  printf("\n\nPercurso:\t");
  CustoMenor(0);
  printf("\n\n: \t");
- printf("%dCusto em KM\n", custo);
+ printf("%d Custo em KM\n", custo);
  return 0;
 }
