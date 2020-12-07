@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int cidades[30][30], cidVisitada[30], cid = 30, custo = 0;
+int cidades[30][30], cidVisitada[30], cid = 4, custo = 0;
  
 int MatrizCidades(int c)
 {
@@ -16,7 +16,7 @@ int MatrizCidades(int c)
  menor = cidades[ct][0] + cidades[c][ct];
  }
  tp = cidades[c][ct];
- aprox_cid = ct;
+ cid_aprox = ct;
  }
  }
  if(menor != 10000)
@@ -36,10 +36,38 @@ CustoMenor(int cid)
  {
  cid_aprox = 0;
  printf("%d", cid_aprox + 1);
- custo = custo + cidades[city][cid_aprox];
+ custo = custo + cidades[cid][cid_aprox];
  return;
  }
  CustoMenor(cid_aprox);
 }
 
-
+int main()
+{ 
+ int i, j;
+ 
+ printf("\nPercorrendo as Cidades\n");
+ for(i = 0; i < cid; i++)
+ {
+ printf("\nDigite %d Distancias no percurso[%d]\n", cid, i + 1);
+ for(j = 0; j < cid; j++)
+ {
+ scanf("%d", &cidades[i][j]);
+ }
+ cidVisitada[i] = 0;
+ }
+ printf("\nResultado do Percurso\n");
+ for(i = 0; i < cid; i++)
+ {
+ printf("\n");
+ for(j = 0; j < cid; j++)
+ {
+ printf("%d ", cidades[i][j]);
+ }
+ }
+ printf("\n\nPercurso:\t");
+ CustoMenor(0);
+ printf("\n\n: \t");
+ printf("%dCusto\n", custo);
+ return 0;
+}
