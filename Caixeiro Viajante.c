@@ -68,6 +68,6 @@ int main()
  printf("\n\nPercurso:\t");
  CustoMenor(0);
  printf("\n\n: \t");
- printf("%dCusto\n", custo);
+ printf("%dCusto em KM\n", custo);
  return 0;
 }
