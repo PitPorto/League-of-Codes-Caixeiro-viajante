@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int cidades[30][30], cidVisitada[30], cid = 4, custo = 0;
+int cidades[30][30], cidVisitada[30], cid = 30, custo = 0;
  
 int MatrizCidades(int c)
 {
